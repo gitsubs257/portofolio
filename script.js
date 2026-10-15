@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Scroll progress, active nav state, and lightweight scroll motion */
   const sections = [...document.querySelectorAll("section[id]")];
   const scrollMotionTargets = [
-    ...document.querySelectorAll(".hero, .heroGlow, .aboutCard, .skill, .card, form"),
+    ...document.querySelectorAll(".hero, .heroGlow, .aboutCard, .skill, .card, form, .contact-profiles"),
   ];
   let scrollFrame = 0;
   let cachedHeight = 1;
@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* Scroll reveal setup. Existing reveal classes are also supported. */
-  const revealTargets = [...document.querySelectorAll(".title, .aboutCard, .skill, .card, form")];
+  const revealTargets = [...document.querySelectorAll(".title, .aboutCard, .skill, .card, form, .profile-card")];
 
   revealTargets.forEach((element, index) => {
     if (!element.classList.contains("reveal")) {
@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     element.style.setProperty("--reveal-index", index % 8);
 
-    if (element.classList.contains("skill") || element.classList.contains("card")) {
+    if (element.classList.contains("skill") || element.classList.contains("card") || element.classList.contains("profile-card")) {
       element.style.transitionDelay = `${(index % 6) * 55}ms`;
     }
   });
